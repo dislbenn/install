@@ -1,0 +1,10 @@
+repos:
+  - name: foo
+    release-branches:
+      - branch: main
+        skip: false
+
+  - name: bar
+    release-branches:
+      - branch: main
+        skip: false

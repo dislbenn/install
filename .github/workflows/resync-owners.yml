@@ -1,0 +1,21 @@
+name: Installer Owner File Resync
+
+# Set jobs to be configured and executed by schedule.
+on:
+  schedule:
+    - cron: '0 13 * * 5' # Action will be executed at 8am EST on every Friday.
+
+# Set environment variables.
+env:
+  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      - name: Run script for OWNER file resync
+        run: |
+          bash ./scripts/resync-owners.sh

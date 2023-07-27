@@ -1,0 +1,52 @@
+repos:
+  - name: backplane-must-gather
+    release-branches:
+      - branch: backplane-2.0
+        skip: false
+      - branch: backplane-2.1
+        skip: false
+      - branch: backplane-2.2
+        skip: false
+      - branch: backplane-2.3
+        skip: false
+      - branch: backplane-2.4
+        skip: false
+
+  - name: backplane-operator
+    release-branches:
+      - branch: backplane-2.0
+        skip: false
+      - branch: backplane-2.1
+        skip: false
+      - branch: backplane-2.2
+        skip: false
+      - branch: backplane-2.3
+        skip: false
+      - branch: backplane-2.4
+        skip: false
+
+  - name: discovery
+    release-branches:
+      - branch: backplane-2.0
+        skip: false
+      - branch: backplane-2.1
+        skip: false
+      - branch: backplane-2.2
+        skip: false
+      - branch: backplane-2.3
+        skip: false
+      - branch: backplane-2.4
+        skip: false
+
+  - name: multiclusterhub-operator
+    release-branches:
+      - branch: main
+        skip: false
+      - branch: release-2.6
+        skip: false
+      - branch: release-2.7
+        skip: false
+      - branch: release-2.8
+        skip: false
+      - branch: release-2.9
+        skip: true
