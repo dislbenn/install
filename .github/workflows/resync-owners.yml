@@ -23,4 +23,6 @@ jobs:
 
       - name: Run script for OWNER file resync
         run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
           bash ./scripts/resync-owners.sh
