@@ -72,6 +72,13 @@ owners_file_check () {
     gh repo set-default $ORG/$1
 
     for RELEASE_BRANCH in $(yq ".repos[] | select(.name == \"$1\") | .release-branches[].branch" $BASE_DIR/$REPOS_FILE_PATH); do
+        SKIP_RELEASE_BRANCH=$(yq ".repos[] | select(.name == \"$1\") | .release-branches[] | select(.branch == \"$RELEASE_BRANCH\") | .skip" $BASE_DIR/$REPOS_FILE_PATH)
+
+        if [[ $SKIP_RELEASE_BRANCH = true ]]; then
+            log_color "purple" "\nRelease branch: \"$RELEASE_BRANCH\" is set to skip. Skipping branch."
+            continue
+        fi
+
         RESYNC_BRANCH=resync-owners-$RELEASE_BRANCH
 
         echo -e "\nChecking to see if the resync branch already exist: $RESYNC_BRANCH"
