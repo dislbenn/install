@@ -3,8 +3,6 @@
 source ./scripts/log-colors.sh
 log_color "cyan" "Running Installer Owner File Resync\n"
 
-echo $GITHUB_TOKEN
-
 ####################
 ## ENV VARIABLES
 ####################
