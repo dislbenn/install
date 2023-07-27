@@ -55,7 +55,7 @@ fetch_release_branch () {
 fetch_repository () {
     if [ ! -d $1 ]; then
         echo -e "Fetching repository: $1\n"
-        git clone git@github.com:$ORG/$1
+        git clone https://github.com/$ORG/$1.git
 
         if [ $? -ne 0 ]; then
             echo -e "Failed to clone the repository: $ORG/$1"
